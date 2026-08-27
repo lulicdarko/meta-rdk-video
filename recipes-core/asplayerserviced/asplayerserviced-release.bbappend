@@ -1,7 +1,8 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 DEPENDS:remove = "aamp fog"
-DEPENDS:append = " nettle"
+# nettle: sha3.h for TriggerModuleManager; googletest: GTest for comptests build
+DEPENDS:append = " nettle googletest"
 
 # Install stub fogiarm.h into sysroot (fog package not available)
 do_configure:prepend() {
